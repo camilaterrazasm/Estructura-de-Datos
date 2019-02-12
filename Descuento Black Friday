@@ -1,0 +1,19 @@
+#include "stdafx.h"
+#include <iostream>
+using namespace std;
+
+void main()
+{
+float n,s;
+cout<<"ingrese el precio"<<endl;
+do
+{
+	cin>>n;
+}
+while(n<0);
+			s=n*50;
+			s=s/100;		
+cout<<"El descuento es"<<s<<endl;
+system("pause");
+	
+}
