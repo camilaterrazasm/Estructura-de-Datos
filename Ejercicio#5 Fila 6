@@ -1,0 +1,31 @@
+#include <stdafx.h>
+#include <stdlib.h>
+#include <iostream>
+#include "conio.h"
+using namespace std;
+void sistema(float a, float b, float c, float d, float e, float f, float &x, float &y);
+void main()
+{
+float a, b, c, d, e, f, x, y;
+cout<<"Ingrese a"<<endl;
+cin>>a;
+cout<<"Ingrese b"<<endl;
+cin>>b;
+cout<<"Ingrese c"<<endl;
+cin>>c;
+cout<<"Ingrese d"<<endl;
+cin>>d;
+cout<<"Ingrese e"<<endl;
+cin>>e;
+cout<<"Ingrese f"<<endl;
+cin>>f;
+sistema(a, b, c, d, e, f, x, y)
+getch();
+}
+void sistema(float a, float b, float c, float d, float e, float f, float &x, float &y);
+{
+x=(c*e-b*f)/(a*e-b*d*);
+y=(a*f-c*d)/(a*e-b*d);
+cout<<"La solucion de x es"<<x<<endl;
+cout<<La solucion de y es"<<y<<endl;
+}
