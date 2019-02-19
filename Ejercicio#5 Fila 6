@@ -27,5 +27,5 @@ void sistema(float a, float b, float c, float d, float e, float f, float &x, flo
 x=(c*e-b*f)/(a*e-b*d*);
 y=(a*f-c*d)/(a*e-b*d);
 cout<<"La solucion de x es"<<x<<endl;
-cout<<La solucion de y es"<<y<<endl;
+cout<<"La solucion de y es"<<y<<endl;
 }
