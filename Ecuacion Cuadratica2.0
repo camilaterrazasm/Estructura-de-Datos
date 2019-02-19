@@ -1,0 +1,65 @@
+#include "stdafx.h"
+#include "stdlib.h"
+#include <iostream>
+#include <conio.h>
+#include <math.h>
+using namespace std;
+
+float Formulacuadratica(float a,float b,float c,float d, float &x1);
+float Discriminante(float a,float b, float c);
+
+void main()
+{
+   float a,b,c,d,x1,x2;
+   char resp;
+   do{
+   cout<<"Ingrese el termino de segundo grado"<<endl;
+   cin>>a;
+   cout<<"Ingrese el termino de primer grado"<<endl;
+   cin>>b;
+   cout<<"Ingrese el termino independiente"<<endl;
+   cin>>c;
+   d=Discriminante(a,b,c);
+   if(d==0)
+   {
+      cout<<"La ecuacion tiene solucion unica"<<endl;
+      x2=Formulacuadratica(a,b,c,d,x1);
+      cout<<"Solucion unica"<<x2<<endl;
+
+   }else
+   {
+       if(d>0)
+   {
+   x2=Formulacuadratica(a,b,c,d,x1);
+   cout<<"Soluciones reales"<<endl;
+   cout<<"La primera solucion es: "<<x1<<endl<<"La segunda solucion es:"<<x2<<endl;
+ 
+       }else
+        {
+        x2=Formulacuadratica(a,b,c,d,x1);
+        cout<<"Solucion imaginaria"<<endl;
+        cout<<"La primera solucion es: "<<-b/(2*a)<<"+"<<sqrt(-d)/(2*a)<<"i"<<endl<<"La segunda solucion es:"<<-b/(2*a)<<"-"<<sqrt(-d)/(2*a)<<"i"<<endl;
+
+        }
+    }
+   getch();
+   cout<<endl<<"Desea continuar (s):";
+   cin>>resp;
+ }while(resp=='s');
+}
+
+
+float Discriminante(float a,float b, float c)
+{
+ int d;
+ d=(b*b)-4*a*c;
+ return d;
+}
+
+float Formulacuadratica(float a,float b,float c,float d, float &x1)
+{
+   float x2;
+   x2=(-b+sqrt(d))/(2*a);
+   x1=(-b-sqrt(d))/(2*a);
+   return x2;
+}
