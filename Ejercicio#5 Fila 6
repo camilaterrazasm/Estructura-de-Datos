@@ -19,7 +19,7 @@ cout<<"Ingrese e"<<endl;
 cin>>e;
 cout<<"Ingrese f"<<endl;
 cin>>f;
-sistema(a, b, c, d, e, f, x, y)
+sistema(a, b, c, d, e, f, x, y);
 getch();
 }
 void sistema(float a, float b, float c, float d, float e, float f, float &x, float &y);
