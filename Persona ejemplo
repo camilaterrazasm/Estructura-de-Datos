@@ -1,4 +1,4 @@
-.h
+persona.h
 
 #pragma once
 class persona
@@ -16,7 +16,7 @@ public:	//metodos
 };
 
 
-.cpp
+persona.cpp
 
 #include "StdAfx.h"
 #include "persona.h"
@@ -42,7 +42,7 @@ void persona:: correr()
 	cout<<"Soy "<<CI<<" y estoy corriendo"<<endl;
 }
 
-main
+ejemplo.persona.cpp  main
 
 #include "stdafx.h"
 #include "persona.h"
