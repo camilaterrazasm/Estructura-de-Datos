@@ -1,0 +1,115 @@
+#pragma once
+
+class Vector
+
+{
+
+private :
+int A[10], B[10], C[20], n, m, o ;
+public:
+Vector(void);
+~Vector(void);
+void cargar (int V[],int p );
+void mostrar (int V[],int p);
+void mezclar (int A[],int n, int B[], int m, int C[], int o);
+};
+
+
+#include "StdAfx.h"
+#include "Vector.h"
+#include <iostream>
+using namespace std ;
+Vector::Vector(void)
+{
+}
+Vector::~Vector(void)
+{
+}
+void Vector::cargar (int V[],int p)
+{
+for(int i=0;i<p;i++)
+{
+cout<<"V["<<i<<"] =" ;
+cin>>V[i];
+}
+}
+void Vector::mostrar (int V[],int p)
+{
+for(int i=0;i<p;i++)
+{
+cout<<V[i]<<", ";
+}
+cout<<endl;
+}
+void Vector::mezclar (int A[],int n, int B[], int m, int C[], int o)
+{
+for (int i=0; i<n; i++)
+}
+
+
+
+#include "stdafx.h"
+#include "conio.h"
+#include <iostream>
+#include "Vector.h"
+using namespace std;
+#define MAX 100
+void main ()
+{
+int N,M,a[MAX],b[MAX],c[2*MAX],opc, O;
+do {
+cout<<"Ingrese el tamano del vector A : ";
+cin>>N;
+}
+while ((N>MAX) || (N<=0));
+cout<<endl;
+do {
+cout<<"Ingrese el tamano del vector B : ";
+cin>>M;
+}
+while ((M>MAX) || (M<=0));
+cout<<endl;
+O=N+M;
+
+
+Vector V1,V2,V3;
+do{
+cout<<"----- M E N U -----"<<endl;
+cout<<"| 1.- Cargar Vector A. |"<<endl;
+cout<<"| 2.- Cargar Vector B. |"<<endl;
+cout<<"| 3.- Mostar Vector A. |"<<endl;
+cout<<"| 4.- Mostrar Vector B. |"<<endl;
+cout<<"| 5.- Mezclar Vector. |"<<endl;
+cout<<"| 0.- Salir |"<<endl;
+cout<<"--------------------------------"<<endl;
+cout<<" Elija una opcion"<<endl;
+cin>>opc;
+switch(opc){
+case 1:
+V1.cargar(a,N);
+break;
+case 2:
+V2.cargar(b,M);
+break;
+case 3:
+V1.mostrar(a,N);
+break;
+case 4:
+V2.mostrar(b,M);
+break;
+case 5:
+V3.mezclar(a,N,b,M,c,O);
+V3.mostrar(c,O);
+break;
+case 0:
+cout<<"Salir"<<endl;
+break;
+default:
+
+cout<<"Error: Opcion no valida"<<endl;
+break;
+}
+
+}while(opc!=0);
+
+
