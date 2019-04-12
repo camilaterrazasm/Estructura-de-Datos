@@ -1,0 +1,163 @@
+#pragma once
+#include <string>
+ using namespace std;
+class Persona
+{
+protected:
+	int CI, ID;
+	string Nombre;
+
+public:
+	Persona(void);
+	~Persona(void);
+	void setCI (int n);
+	void setNombre (string N);
+	void setID (int I);
+};
+
+
+#include "StdAfx.h"
+#include "Persona.h"
+#include <iostream>
+ using namespace std;
+
+
+Persona::Persona(void)
+{
+}
+
+Persona::~Persona(void)
+{
+}
+
+void Persona ::setCI (int n)
+{ 
+	CI=n;
+}
+
+void Persona ::setNombre (string N)
+{ 
+	Nombre=N;
+}
+
+void Persona ::setID (int I)
+{ 
+	ID=I;
+}
+
+
+#pragma once
+#include "Persona.h"
+class Administrador : public Persona
+{
+private:
+	int Sueldo ;
+public:
+	Administrador(void);
+	~Administrador(void);
+	void getSueldo ();
+	void mostrarAdministrador ();
+};
+
+
+#include "StdAfx.h"
+#include "Administrador.h"
+#include <iostream>
+ using namespace std ;
+
+Administrador::Administrador(void)
+{
+}
+Administrador::~Administrador(void)
+{
+}
+
+void Administrador::getSueldo()
+{ cout<<"ingrese sueldo del administrador : ";
+  cin>>Sueldo;
+}
+
+void Administrador::mostrarAdministrador ()
+{ cout<<Nombre<<endl;
+  cout<<CI<<" : "<<ID<<endl;
+  cout<<Sueldo;
+}
+
+#pragma once
+#include "Persona.h"
+class Docente : public Persona
+{
+private:
+	int Horas ;
+public:
+	Docente(void);
+	~Docente(void);
+	void getHoras ();
+	void mostrarDocente ();
+
+};
+
+
+#include "StdAfx.h"
+#include "Docente.h"
+#include <iostream>
+ using namespace std;
+
+
+Docente::Docente(void)
+{
+}
+Docente::~Docente(void)
+{
+}
+
+void Docente::getHoras()
+{ cout<<"ingrese horas del docente : ";
+  cin>>Horas;
+}
+
+void Docente::mostrarDocente ()
+{ cout<<Nombre<<endl;
+  cout<<CI<<" : "<<ID<<endl;
+  cout<<Horas;
+}
+
+
+
+// ejemploPersona.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include "Administrador.h"
+#include "Persona.h"
+#include "Docente.h"
+#include <iostream>
+#include <string>
+#include "conio.h"
+ using namespace std;
+
+void main ()
+{ Docente D1 ;
+  Administrador A1 ;
+  string n,m ;
+  int ci1,id1,ci2,id2;
+  cout<<"ingrese nombre docente : "; getline(cin,n);
+  cout<<"ingrese CI docente : ";cin>>ci1;
+  cout<<"ingrese ID docente : \n";cin>>id1;
+  D1.setNombre(n);
+  D1.setCI(ci1);
+  D1.setID(id1);
+  D1.getHoras();
+  D1.mostrarDocente();
+
+  cout<<"\ningrese nombre administrador : "; cin.ignore(); getline(cin,m);
+  cout<<"\ningrese CI administrador : ";cin>>ci2;
+  cout<<"ingrese ID administrador : ";cin>>id2;
+  A1.setNombre(m);
+  A1.setCI(ci2);
+  A1.setID(id2);
+  A1.getSueldo();
+  A1.mostrarAdministrador();
+
+getch();	
+}
