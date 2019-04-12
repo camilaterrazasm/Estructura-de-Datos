@@ -11,8 +11,12 @@ public:
 	Fecha(string _date);
 	~Fecha(void);
 	bool validarfecha();
+	int devolverdia();
+	int devolvermes();
+	int devolveranio();
 };
 
+//Fecha.cpp
 #include "StdAfx.h"
 #include "Fecha.h"
 #include <string>
@@ -27,10 +31,9 @@ Fecha::Fecha(int _d,int _m,int _a )
 
 Fecha::Fecha(long _f)  //10112019 
 {
-	a=int( _f%10000 );
-	m=int( (_f-_f%10000) % 1000000 );
-	d=int(((_f-_f%10000)/10000)%100);
-
+	d= int(_f/1000000);
+	m= int((_f-(d*1000000))/10000);
+	a= int((_f-(d*1000000))-m*10000);
 }
 
 Fecha::Fecha(string _date)
@@ -71,9 +74,24 @@ bool Fecha::validarfecha()
 					   return t;
 				   else 
 					   t=false;
-   }
+}
+}
+
+int	Fecha::devolverdia()
+{
+	return d;
+}
+int Fecha::devolvermes()
+{
+	return m;
+}
+int Fecha::devolveranio()
+{
+	return a;
+}
 
 
+//EjemploFecha.cpp
 #include "stdafx.h"
 #include "stdlib.h"
 #include "Fecha.h"
@@ -84,8 +102,8 @@ using namespace std;
 
 void main()
 {
-	int d,m,a,opc;
-	string date;
+	int d,m,a,opc,dd,mm,aa;
+	string fecha;
 	long f;
 
 	cout<<"Que estilo de fecha desea ingresar: "<<endl;
@@ -114,7 +132,8 @@ void main()
 		case 3:
 				system("CLS");
 				cout<<"Ingrese la fecha: ";
-				getline(cin,date);
+				cin.ignore();
+				getline(cin,fecha);
 				break;
 		case 4:	
 				system("CLS");
@@ -126,8 +145,11 @@ void main()
 	{
 		Fecha f1(d,m,a);
 			if(f1.validarfecha()==true)
-				{
-					cout<<"La fecha es: "<<d<<"/"<<m<<"/"<<a;
+				{	
+					dd=f1.devolverdia();
+					mm=f1.devolvermes();
+					aa=f1.devolveranio();
+					cout<<"La fecha es valida: "<<dd<<"/"<<mm<<"/"<<aa;
 				}else
 				{
 					cout<<"Fecha erronea";
@@ -137,8 +159,11 @@ void main()
 		{	
 			Fecha f1(f);
 			if(f1.validarfecha()==true)
-				{
-					cout<<"La fecha es: "<<d<<"/"<<m<<"/"<<a;
+				{	
+					dd=f1.devolverdia();
+					mm=f1.devolvermes();
+					aa=f1.devolveranio();
+					cout<<"La fecha es valida: "<<dd<<"/"<<mm<<"/"<<aa;
 				}else
 				{
 					cout<<"Fecha erronea";
@@ -147,10 +172,13 @@ void main()
 		{
 			if (opc==3)
 			{
-				Fecha f1(date);
+				Fecha f1(fecha);
 				if(f1.validarfecha()==true)
-				{
-					cout<<"La fecha es: "<<d<<"/"<<m<<"/"<<a;
+				{		
+					dd=f1.devolverdia();
+					mm=f1.devolvermes();
+					aa=f1.devolveranio();
+					cout<<"La fecha es valida: "<<dd<<"/"<<mm<<"/"<<aa;
 				}else
 				{
 					cout<<"Fecha erronea";
